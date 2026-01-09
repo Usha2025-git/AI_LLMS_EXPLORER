@@ -21,10 +21,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Categories</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="/category/ai-blogs" className="hover:text-white">AI Blogs</a></li>
-              <li><a href="/category/ai-tutorial" className="hover:text-white">AI Tutorial</a></li>
-              <li><a href="/category/daily-unwind" className="hover:text-white">Daily Unwind</a></li>
-              <li><a href="/category/weekly-unwind" className="hover:text-white">Weekly Unwind</a></li>
+              <li><span className="text-gray-500">AI Blogs</span></li>
+              <li><span className="text-gray-500">AI Tutorial</span></li>
+              <li><span className="text-gray-500">Daily Unwind</span></li>
+              <li><span className="text-gray-500">Weekly Unwind</span></li>
             </ul>
           </div>
           <div>
