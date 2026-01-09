@@ -1,0 +1,204 @@
+# CodeRabbit Configuration for Awesome LLM Apps
+# This configures CodeRabbit to provide helpful code reviews
+
+language:
+  # Focus on TypeScript/JavaScript for the website
+  - typescript
+  - javascript
+  - python
+  - markdown
+
+chat:
+  # Enable CodeRabbit's chat functionality
+  review_comment_lgtm: true
+
+reviews:
+  # General review settings
+  high_level_summary: true
+  extra_instructions: |
+    This repository contains:
+    1. Next.js/React website in the /website directory
+    2. Python LLM applications (AI Agents, RAG tutorials, etc.)
+    3. Starter and advanced AI agent projects
+    
+    Please pay special attention to:
+    - TypeScript type safety in the website
+    - Python best practices for LLM applications
+    - Security considerations for API keys
+    - Performance optimizations
+    - Accessibility in React components
+    - Error handling in both Python and TypeScript
+
+  request_changes_workflow: true
+  path_filters:
+    # Website-specific reviews
+    - 'website/**/*.{ts,tsx,js,jsx}'
+      review_type: full
+      labels:
+        - website
+        - frontend
+      auto_review:
+        enabled: true
+        base_branches:
+          - main
+          - develop
+    # Python code reviews
+    - '**/*.py'
+      review_type: full
+      labels:
+        - python
+        - backend
+      auto_review:
+        enabled: true
+        base_branches:
+          - main
+          - develop
+      ignore:
+        - '__pycache__/**'
+        - '*.pyc'
+        - '.venv/**'
+        - 'venv/**'
+    # Configuration files
+    - '**/*.{json,yaml,yml,toml}'
+      review_type: full
+      labels:
+        - config
+    # Documentation
+    - '**/*.md'
+      review_type: concise
+      labels:
+        - documentation
+
+  ignore_files:
+    # Ignore dependencies and build artifacts
+    - '**/node_modules/**'
+    - '**/.next/**'
+    - '**/dist/**'
+    - '**/build/**'
+    - '**/__pycache__/**'
+    - '**/*.pyc'
+    - '**/.env'
+    - '**/.env.local'
+    - '**/package-lock.json'
+    - '**/yarn.lock'
+    - '**/poetry.lock'
+    - '**/.git/**'
+
+# CodeRabbit features to enable
+features:
+  # Enable auto-review on pull requests
+  auto_review:
+    enabled: true
+    base_branches:
+      - main
+      - develop
+    paths:
+      - 'website/**'
+      - '**/*.py'
+  
+  # Enable code suggestions
+  code_suggestions:
+    enabled: true
+  
+  # Enable security vulnerability detection
+  vulnerability_alerts:
+    enabled: true
+  
+  # Enable performance suggestions
+  performance_alerts:
+    enabled: true
+
+# Path-specific configurations
+paths:
+  # Website directory (Next.js/React/TypeScript)
+  - path: 'website/**'
+    review_type: full
+    checks:
+      - typescript
+      - react
+      - nextjs
+      - accessibility
+      - performance
+      - security
+    auto_review: true
+  
+  # Python LLM applications
+  - path: '**/*.py'
+    review_type: full
+    checks:
+      - python
+      - security
+      - best_practices
+      - performance
+    auto_review: true
+    ignore_patterns:
+      - '__pycache__/**'
+      - '**/migrations/**'
+  
+  # Configuration files
+  - path: '**/*.{json,yaml,yml}'
+    review_type: concise
+    checks:
+      - syntax
+      - best_practices
+    auto_review: false
+
+# Comment settings
+comments:
+  # Comment on pull requests
+  on_pull_request: true
+  
+  # Comment on commits (optional)
+  on_commit: false
+  
+  # Minimum confidence level for suggestions (0.0-1.0)
+  min_confidence_level: 0.7
+  
+  # Maximum number of comments per file
+  max_comments_per_file: 10
+
+# Notification settings
+notifications:
+  # Notify on security issues
+  security_alerts: true
+  
+  # Notify on critical issues
+  critical_issues: true
+
+# Language-specific configurations
+typescript:
+  # TypeScript/React specific checks
+  check_types: true
+  check_unused_vars: true
+  check_imports: true
+  prefer_arrow_functions: true
+
+python:
+  # Python specific checks
+  check_types: true
+  check_imports: true
+  prefer_f_strings: true
+  check_docstrings: true
+  line_length: 100
+  max_complexity: 10
+
+# Additional review instructions for specific directories
+review_instructions:
+  website:
+    - "Check for TypeScript type safety"
+    - "Ensure React components are properly typed"
+    - "Verify Tailwind CSS classes are correct"
+    - "Check for accessibility issues (ARIA labels, semantic HTML)"
+    - "Ensure Next.js best practices are followed"
+  
+  python_apps:
+    - "Check for proper error handling"
+    - "Verify API key handling is secure (no hardcoded keys)"
+    - "Check for proper async/await usage"
+    - "Verify imports are organized"
+    - "Check docstrings and type hints"
+  
+  config:
+    - "Verify configuration syntax is correct"
+    - "Check for sensitive information (API keys, passwords)"
+    - "Ensure proper formatting"

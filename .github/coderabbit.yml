@@ -1,0 +1,24 @@
+# CodeRabbit GitHub App Configuration
+# This helps CodeRabbit understand the repository structure better
+
+version: 2
+
+# Repository description for context
+description: "Awesome LLM Apps - Open-source Ecosystem for High-Leverage AI Builders"
+
+# Language detection
+languages:
+  - TypeScript
+  - JavaScript
+  - Python
+  - Markdown
+  - JSON
+  - YAML
+
+# Special focus areas
+focus_areas:
+  - "Next.js website in /website directory"
+  - "Python LLM applications and agents"
+  - "RAG (Retrieval-Augmented Generation) implementations"
+  - "AI agent frameworks and tutorials"
+  - "Security and best practices for API keys"

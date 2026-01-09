@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #9333ea;
+  --primary-light: #c084fc;
+  --primary-dark: #6b21a8;
+}
+
+body {
+  @apply bg-white text-gray-900;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+}
