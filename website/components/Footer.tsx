@@ -16,7 +16,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li><a href="/about" className="hover:text-white">About Us</a></li>
               <li><a href={siteConfig.social.githubRepo} target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub</a></li>
-              <li><a href="/sponsor" className="hover:text-white">Sponsor Us</a></li>
             </ul>
           </div>
           <div>

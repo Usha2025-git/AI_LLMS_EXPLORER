@@ -16,12 +16,6 @@ export const siteConfig = {
     rss: "/rss.xml", // RSS feed URL
   },
   
-  // GitHub Sponsors (if applicable)
-  sponsors: {
-    githubSponsors: "https://github.com/sponsors/Usha2025-git", // Your GitHub Sponsors URL
-    email: "sponsor@yourdomain.com", // Sponsorship email
-  },
-  
   // Site Information
   site: {
     name: "Awesome LLM Apps",
@@ -36,7 +30,6 @@ export const siteConfig = {
     items: [
       { name: "About Us", href: "/about" },
       { name: "Awesome LLM Apps", href: "https://github.com/Usha2025-git/AI_LLMS_EXPLORER", external: true },
-      { name: "Sponsor Us", href: "/sponsor" },
     ],
   },
 }

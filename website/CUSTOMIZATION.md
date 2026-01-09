@@ -26,16 +26,7 @@ social: {
 },
 ```
 
-### Step 3: Update Sponsorship Information
-
-```typescript
-sponsors: {
-  githubSponsors: "https://github.com/sponsors/yourusername",  // Your GitHub Sponsors
-  email: "sponsor@yourdomain.com",  // Your sponsorship email
-},
-```
-
-### Step 4: Update Site Information (Optional)
+### Step 3: Update Site Information (Optional)
 
 ```typescript
 site: {
@@ -60,7 +51,6 @@ Once you update `config/site.ts`, these components automatically use your inform
 - ✅ Social media links (Twitter, LinkedIn, GitHub)
 - ✅ Navigation links
 - ✅ Footer information
-- ✅ Sponsor page
 - ✅ Meta tags and SEO information
 
 ## Example
@@ -87,4 +77,3 @@ If you need to customize more than what's in the config file, you can directly e
 - `components/` - For UI changes
 - `app/page.tsx` - For homepage layout
 - `app/about/page.tsx` - For About page content
-- `app/sponsor/page.tsx` - For Sponsor page content
